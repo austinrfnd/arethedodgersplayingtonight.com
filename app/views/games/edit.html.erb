@@ -1,0 +1,36 @@
+<h1>Editing game</h1>
+
+<% form_for(@game) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :game_at %><br />
+    <%= f.datetime_select :game_at %>
+  </p>
+  <p>
+    <%= f.label :opponent %><br />
+    <%= f.text_field :opponent %>
+  </p>
+  <p>
+    <%= f.label :telivision %><br />
+    <%= f.text_field :telivision %>
+  </p>
+  <p>
+    <%= f.label :radio %><br />
+    <%= f.text_field :radio %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :away %><br />
+    <%= f.check_box :away %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @game %> |
+<%= link_to 'Back', games_path %>

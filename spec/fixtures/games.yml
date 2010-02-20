@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  game_at: 2010-02-20 11:16:53
+  opponent: MyString
+  telivision: MyString
+  radio: MyString
+  location: MyString
+  away: false
+
+two:
+  game_at: 2010-02-20 11:16:53
+  opponent: MyString
+  telivision: MyString
+  radio: MyString
+  location: MyString
+  away: false
