@@ -19,4 +19,23 @@ describe Game do
   it "should be valid with minimum amount of info" do
     Game.create!({:game_at => Time.now, :opponent => "Giants", :location => 'asdf', :away => true})
   end
+  
+  describe "game_today?" do
+    it "should return true if there is a game today" do
+      Game.create!(@valid_attributes)
+      Game.should be_game_today
+    end
+    
+    it "should return false" do
+      Game.should_not be_game_today
+    end
+  end
+  
+  describe "next_game" do
+    it "should return the next game" do 
+      next_next_game = Game.create!(@valid_attributes.merge(:game_at => Time.now + 10.days))
+      next_game = Game.create!(@valid_attributes.merge(:game_at => Time.now + 5.days))
+      Game.next_game.should be_eql(next_game)
+    end
+  end
 end
