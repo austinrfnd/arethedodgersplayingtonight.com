@@ -17,7 +17,8 @@ ActiveRecord::Schema.define(:version => 20100220191653) do
     t.string   "telivision"
     t.string   "radio"
     t.string   "location"
-    t.boolean  "away",       :default => false
+    t.string   "special_text"
+    t.boolean  "away",         :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

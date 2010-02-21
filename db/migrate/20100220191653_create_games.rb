@@ -6,6 +6,7 @@ class CreateGames < ActiveRecord::Migration
       t.string :telivision
       t.string :radio
       t.string :location
+      t.string :special_text
       t.boolean :away, :default => false
 
       t.timestamps
