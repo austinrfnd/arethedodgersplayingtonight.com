@@ -11,6 +11,7 @@ namespace :schedule do
         first_line = false
       else 
         day = line.split(',')
+        
         teams = day[3].split('at')
         opponent = nil
         away = false
@@ -29,7 +30,7 @@ namespace :schedule do
         radio = radio[0].split("--").join(', ') unless radio.nil?
         tv = day[5].match(/Local TV: (\S.*|[a-zA-Z]*|[0-9])/)
         tv = tv[0].split("--").join(', ') unless tv.nil?
-        Game.create!(:game_at => DateTime.parse("#{day[0]} #{day[1]} PST"),
+        Game.create!(:game_at => DateTime.parse("#{day[0].split("/").first}/#{day[0].split("/")[1]}/20#{day[0].split("/")[2]} #{day[1]} PST"),
                      :location => day[4], 
                      :telivision => tv,
                      :radio => radio,
