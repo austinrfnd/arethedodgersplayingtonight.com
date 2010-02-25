@@ -6,4 +6,7 @@
 	%body
 		#main
 			= yield
+			
+			#footer
+				= "#{link_to("Dodgers Schedule", "http://losangeles.dodgers.mlb.com/schedule/index.jsp")} | #{link_to('Dodgers Official Website', 'http://www.dodgers.com')}"
 		
