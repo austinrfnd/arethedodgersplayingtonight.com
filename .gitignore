@@ -2,3 +2,5 @@ config/database.yml
 log/*.log
 *.DS_Store
 db/*.sqlite3
+public/stylesheets/*.css
+tmp/*
