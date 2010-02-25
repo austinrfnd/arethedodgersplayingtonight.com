@@ -1,0 +1,11 @@
+#answer
+	- if @current_game
+		YES
+		= "First pitch at #{@current_game.game_at.strftime("%I:%M")} Pacific versus #{@current_game.opponent}"
+	- else
+		NO
+
+- if @next_game
+	#next_game
+		Next game
+		= "on #{@next_game.game_at.strftime("%m/%d/%y %I:%M")} pacific versus #{@next_game.opponent} at #{@next_game.location}"

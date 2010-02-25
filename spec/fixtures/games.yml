@@ -1,7 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  game_at: 2010-02-20 11:16:53
+  game_at: <%= 1.day.from_now %>
   opponent: MyString
   telivision: MyString
   radio: MyString
@@ -9,7 +9,7 @@ one:
   away: false
 
 two:
-  game_at: 2010-02-20 11:16:53
+  game_at: <%= 2.days.from_now %>
   opponent: MyString
   telivision: MyString
   radio: MyString

@@ -21,6 +21,11 @@ describe Game do
   end
   
   describe "game_today?" do
+    it "should get current_game" do
+      @game = Game.create!(@valid_attributes)
+      Game.current_game.should be_eql(@game)
+    end
+    
     it "should return true if there is a game today" do
       Game.create!(@valid_attributes)
       Game.should be_game_today
@@ -34,7 +39,7 @@ describe Game do
   describe "next_game" do
     it "should return the next game" do 
       next_next_game = Game.create!(@valid_attributes.merge(:game_at => Time.now + 10.days))
-      next_game = Game.create!(@valid_attributes.merge(:game_at => Time.now + 5.days))
+      next_game = Game.create!(@valid_attributes.merge(:game_at => Time.now + 1.hour))
       Game.next_game.should be_eql(next_game)
     end
   end

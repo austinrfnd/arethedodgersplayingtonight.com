@@ -23,6 +23,4 @@ ActiveRecord::Schema.define(:version => 20100220191653) do
     t.datetime "updated_at"
   end
 
-  add_index "games", ["game_at"], :name => "index_games_on_game_at"
-
 end

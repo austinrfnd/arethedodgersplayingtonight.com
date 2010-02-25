@@ -2,10 +2,14 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.xml
   def index
-    @games = Game.all
-
     respond_to do |format|
-      format.html # index.html.erb
+      format.html do
+        @next_game = Game.next_game
+        @current_game = Game.current_game
+        render :action => 'show'
+      end
+      # XML or JSON
+        # previous games.... start day and loop through to today
       format.xml  { render :xml => @games }
     end
   end

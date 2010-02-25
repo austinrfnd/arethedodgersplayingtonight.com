@@ -29,5 +29,11 @@ describe GamesController do
     it "recognizes and generates #destroy" do
       { :delete => "/games/1" }.should route_to(:controller => "games", :action => "destroy", :id => "1") 
     end
+    
+    describe "default route" do
+      it "should generate params for #contact_seller" do
+        params_from(:get, "/").should == {:controller => "games", :action => "index"}
+      end
+    end
   end
 end
