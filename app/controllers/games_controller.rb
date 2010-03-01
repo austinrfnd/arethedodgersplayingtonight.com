@@ -8,9 +8,9 @@ class GamesController < ApplicationController
         @current_game = Game.current_game
         render :action => 'show'
       end
-      # XML or JSON
-        # previous games.... start day and loop through to today
-      format.xml  { render :xml => @games }
+      @games = Game.recent_games
+      format.xml  # index.xml.builder
+      # format.json {:json => build_json(@games)}
     end
   end
 
@@ -86,4 +86,9 @@ class GamesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+    def build_json(games)
+      []      
+    end
 end

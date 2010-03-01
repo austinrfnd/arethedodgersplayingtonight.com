@@ -3,6 +3,7 @@
 	%head
 		%title Are The Dodgers Playing Tonight?
 		= stylesheet_link_tag "application"
+		= yield(:head)
 	%body
 		#main
 			= yield

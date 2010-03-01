@@ -15,3 +15,11 @@ two:
   radio: MyString
   location: MyString
   away: false
+
+old:
+  game_at: <%= 32.days.from_now %>
+  opponent: MyString
+  telivision: MyString
+  radio: MyString
+  location: MyString
+  away: false

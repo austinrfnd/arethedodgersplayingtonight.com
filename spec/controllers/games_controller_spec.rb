@@ -1,9 +1,21 @@
-require 'spec_helper'
+require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe GamesController do
   integrate_views
+  
   def mock_game(stubs={})
     @mock_game ||= mock_model(Game, stubs)
+  end
+  
+  describe 'routing' do
+    it "recognizes and generates #named routes" do
+      { :get => "/" }.should route_to(:controller => "games", :action => "index")
+    end
+    
+    it "should route recent" do
+      { :get => "/recent.xml" }.should route_to(:controller => "games", :action => "index")
+      { :get => "/recent.json" }.should route_to(:controller => "games", :action => "index")
+    end
   end
 
   describe "GET index" do
@@ -28,7 +40,10 @@ describe GamesController do
     
     it "should get JSON successfully" 
     
-    it "should get XML successfully"
+    it "should get XML successfully" do
+      get :index, :format => 'xml'
+      response.should be_success
+    end
   end
   # 
   # describe "GET show" do

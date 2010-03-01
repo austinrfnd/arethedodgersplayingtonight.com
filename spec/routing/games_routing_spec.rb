@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe GamesController do
   describe "routing" do
-    it "recognizes and generates #index" do
-      { :get => "/games" }.should route_to(:controller => "games", :action => "index")
-    end
-
     it "recognizes and generates #new" do
       { :get => "/games/new" }.should route_to(:controller => "games", :action => "new")
     end
