@@ -3,11 +3,13 @@
 
 #prompt
 	Are The Dodgers Playing Tonight?
-#answer
-	- if @current_game
+
+- if @current_game
+	#answer
 		YES
-		= "First pitch at #{@current_game.game_at.strftime("%I:%M")} Pacific versus #{@current_game.opponent}"
-	- else
+	= "First pitch at #{@current_game.game_at.strftime("%I:%M")} Pacific versus #{@current_game.opponent}"
+- else
+	#answer
 		NO
 
 - if @next_game

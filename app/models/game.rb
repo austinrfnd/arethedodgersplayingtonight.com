@@ -20,6 +20,6 @@ class Game < ActiveRecord::Base
   end
   
   def self.next_game
-    Game.find(:first, :conditions => ["game_at > ?", Time.now], :order => "game_at ASC")
+    Game.find(:first, :conditions => ["game_at > ?", Time.now + 1.day], :order => "game_at ASC")
   end
 end
